@@ -7,6 +7,7 @@ import dotenv from "dotenv";
 import { pool } from "./db";
 import type { Result } from "pg";
 import { userRoute } from "./modules/user/user.route";
+import { profileRoute } from "./modules/profile/profile.route";
 
 dotenv.config();
 
@@ -24,5 +25,6 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.use("/api/users", userRoute);
+app.use("/api/profiles", profileRoute);
 
 export default app;
